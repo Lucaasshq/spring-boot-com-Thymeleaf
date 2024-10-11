@@ -1,4 +1,4 @@
-package org.lucashspring3.curso.demomvc.curso.entity.domain;
+package org.lucashspring3.curso.demomvc.curso.entity;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
