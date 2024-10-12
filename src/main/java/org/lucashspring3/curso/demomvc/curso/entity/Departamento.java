@@ -32,4 +32,5 @@ public class Departamento extends AbstractEntity<Long> {
     public void setCargos(List<Cargo> cargos) {
         this.cargos = cargos;
     }
+
 }
