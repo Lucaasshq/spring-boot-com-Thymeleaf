@@ -1,8 +1,6 @@
 package org.lucashspring3.curso.demomvc.curso.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "ENDERECOS")
@@ -17,34 +15,72 @@ public class Endereco extends AbstractEntity<Long> {
     @Column(name = "cidade", nullable = false)
     private String cidade;
 
+    @Column(name = "uf", nullable = false, length = 2)
+    @Enumerated(EnumType.STRING)
+    private UF uf;
 
-    public enum UF {
+    @Column(name = "cep", nullable = false, length = 9)
+    private String cep;
 
-        AC("AC", "Acre"),
-        AL("AL", "Alagoas"),
-        AM("AM", "Amazonas"),
-        BA("BA", "Bahia"),
-        CE("CE", "Ceará"),
-        DF("DF", "Distrito Federal"),
-        ES("ES", "Espírito Santo"),
-        GO("GO", "Goiás"),
-        MA("MA", "Maranhão"),
-        MT("MT", "Mato Grosso"),
-        MS("MS", "Mato Grosso do Sul"),
-        MG("MG", "Minas Gerais"),
-        PA("PA", "Pará"),
-        PB("PB", "Paraíba"),
-        PR("PR", "Paraná"),
-        PE("PE", "Pernambuco"),
-        PI("PI", "Piauí"),
-        RJ("RJ", "Rio de Janeiro"),
-        RN("RN", "Rio Grande do Norte"),
-        RS("RS", "Rio Grande do Sul"),
-        RO("RO", "Rondônia"),
-        RR("RR", "Roraima"),
-        SC("SC", "Santa Catarina"),
-        SP("SP", "São Paulo"),
-        SE("SE", "Sergipe"),
-        TO("TO", "Tocantins");
+    @Column(name = "numero", nullable = false, length = 5)
+    private Integer numero;
+
+    @Column(name = "complemento")
+    private String complemento;
+
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public UF getUf() {
+        return uf;
+    }
+
+    public void setUf(UF uf) {
+        this.uf = uf;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
     }
 }
