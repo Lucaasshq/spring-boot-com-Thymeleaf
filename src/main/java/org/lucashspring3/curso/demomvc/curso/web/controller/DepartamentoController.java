@@ -18,4 +18,6 @@ public class DepartamentoController {
     public String listar() {
         return "/departamento/lista";
     }
+
+
 }
