@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html layout:decorate="~{layout}" xmlns:layout="http://www.w3.org/1999/xhtml">
+<html layout:decorate="~{layout}" xmlns:layout="http://www.w3.org/1999/xhtml" lang="">
 <head><meta charset="UTF-8"/></head>
 <body>
 
@@ -21,12 +21,13 @@
 	</nav>
 
 	<div class="container" id="cadastro">
-		<form action="/departamentos/salvar" method="POST">
+
+		<form th:action="@{/departamentos/salvar}" th:object="${departamento}" method="POST">
 			<div class="form-row">
 				<div class="form-group col-md-6">
 					<label for="nome">Departamento</label>
 					<input type="text" class="form-control" id="nome"
-						   placeholder="Nome Departamento" autofocus="autofocus" />
+						   placeholder="Nome Departamento" autofocus="autofocus" th:field="*{name}" />
 				</div>
 			</div>
 			<input type="hidden" id="id" name="id" value=""/>
