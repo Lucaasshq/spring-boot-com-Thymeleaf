@@ -20,6 +20,7 @@ public class DepartamentoController {
     public String cadastro(Model model) {
         model.addAttribute("departamento", new Departamento());
      return "/departamento/cadastro";
+        
     }
 
 
